@@ -8,6 +8,12 @@
 
 _Practice using the create react app typescript template and notes on best practices described in [this article](https://www.sitepoint.com/react-with-typescript-best-practices/)._
 
+Other suggested resources:
+
+-   [Repo for react-typescript-cheatsheet](https://github.com/typescript-cheatsheets/react-typescript-cheatsheet)
+
+-   [TypescriptHandbook](https://www.typescriptlang.org/docs/handbook/basic-types.html)
+
 ## Known Bugs
 
 There are no known bugs at the time of this update.
