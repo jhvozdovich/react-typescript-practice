@@ -80,3 +80,78 @@ export function reducer(state: AppState, action: Action): AppState {
             return state;
     }
 }
+
+// Use cases  --------------------------------------------------------------
+// Forms - typing the onChange function used
+
+const MyInput = () => {
+    const [value, setValue] = React.useState('');
+
+    // The event type is a "ChangeEvent"
+    // We pass in "HTMLInputElement" to the input
+    function onChange(e: React.ChangeEvent<HTMLInputElement>) {
+        setValue(e.target.value);
+    }
+
+    return <input value={value} onChange={onChange} id="input-example" />;
+};
+
+// Extending component props - depends on if type or interface
+//  FOR TYPE - type and "= ButtonPropsType & "
+type ButtonPropsType = {
+    /** the background color of the button */
+    color: string;
+    /** the text to show inside the button */
+    text: string;
+};
+
+type ContainerPropsType = ButtonPropsType & {
+    /** the height of the container (value used with 'px') */
+    height: number;
+    width: number;
+};
+
+const ContainerPropsType: React.FC<ContainerPropsType> = ({ color, height, width, text }) => {
+    return <div style={{ backgroundColor: color, height: `${height}px` }}>{text}</div>;
+};
+
+//  FOR INTERFACE - interface and extends
+interface ButtonPropsInterface {
+    /** the background color of the button */
+    color: string;
+    /** the text to show inside the button */
+    text: string;
+}
+
+interface ContainerPropsInterface extends ButtonPropsInterface {
+    /** the height of the container (value used with 'px') */
+    height: number;
+    width: number;
+}
+
+const Container: React.FC<ContainerPropsInterface> = ({ color, height, width, text }) => {
+    return <div style={{ backgroundColor: color, height: `${height}px` }}>{text}</div>;
+};
+
+// Checking for types package in third party libraries -----------------------
+
+// yarn
+// yarn add @types/<package-name>
+
+// npm
+// npm install @types/<package-name>
+
+// jest example
+// npm install @types/jest
+
+// Adding declaration file if none --------------------------------------
+
+// file in root for banana-js make banana-js.d.ts declaration file
+// basic (no types):
+// declare module 'banana-js';
+// thorough:
+// declare namespace bananaJs {
+//     function getBanana(): string;
+//     function addBanana(n: number) void;
+//     function removeBanana(n: number) void;
+// }
