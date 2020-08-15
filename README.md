@@ -6,7 +6,7 @@
 
 ## Description
 
-_Practice using the create react app typescript template and notes on best practices described in [this article](https://www.sitepoint.com/react-with-typescript-best-practices/)._
+_Practice using the create react app typescript template and notes on best practices described in [this article](https://www.sitepoint.com/react-with-typescript-best-practices/) and [this blog post](https://blog.bitsrc.io/react-typescript-cheetsheet-2b6fa2cecfe2)._
 
 Other suggested resources:
 
